@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register form</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .innerbox{
+            position: relative;
+            top: 5mm;
+            padding: 20px;
+        }
+        .lab{
+            display: flex;
+            position: relative;
+            display: inline-block;
+            width:150px;
+            text-transform: uppercase;
+            margin: 3px;
+            color: rgb(10, 42, 221);
+        }
+        .add{
+            width: 170px;
+            height: 20mm;
+        }
+        #ma{
+            accent-color: rgb(219, 9, 132);
+        }
+        #ho{
+            accent-color: red;
+        }
+        .tr{
+            text-align: left;
+            margin: 10px;
+            position: relative;
+            left: 42mm;
+        }
+        .tr1{
+            text-align: center;
+        }
+        .td{
+            position: relative;
+            top: 6mm;
+            color: blue;
+        }
+        .a{
+            color: rgb(138, 9, 131);
+        }
+        .co{
+           position: relative;
+           accent-color: red;
+           
+        }
+        .b{
+            position: relative;
+            left: 5mm;
+        }
+        .but a{
+            position: relative;
+            text-decoration: none;
+            color: blue;
+        }
+        .but{
+            position: relative;
+            left: 130mm;
+            background-color: cadetblue;
+            border-radius: 5px;
+            border: 2px solid wheat;
+        }
+        .outerbox h1{
+            position: relative;
+            text-align: center;
+            top: 3mm;
+            color: rgb(36, 117, 117);
+        }
+    </style>
+    <div class="outerbox" id="box">
+        <h1>STUDENT REGISTRATION FORM</h1>
+        <form>
+        <div class="innerbox" style="background-color:rgb(37, 233, 119);">
+            <label class="lab"for='Firstname'>First Name</label>
+            <input type="text" name="first name" id="firstname" onfocus="fun()" required> (max 30 characters a-z and A-Z)<br>
+            <script>
+             
+                function fun(){
+                    document.getElementById('firstname').style.background='grey'
+                    
+                }
+                function fun1(){
+                    document.getElementById('lastname').style.background='grey'
+                }
+            </script>
+
+            <label class="lab" for="lastname">Last Name</label>
+            <input type="text" name="lastname" onfocus="fun1()" id="lastname" required> (max 30 characters a-z and A-Z)<br>
+
+            <label class="lab">Date of Birth</label>
+            <input type="date" required><br>
+
+            <label class="lab" for="email">Email Id</label>
+            <input type="email" name="email" placeholder="@gmail.com" required><br>
+
+            <label class="lab" for="number">Mobile Number</label>
+            <input type="text" name="number" placeholder="xxxxxxxxxx" maxlength="10" required ><br>
+
+            <label class="lab">Genter</label>
+            <label>Male</label>
+            <input id="ma" type="radio" name="GENTER" value="Male">
+            <label>Female</label>
+            <input id="ma" type="radio" name="GENTER" value="Female"><br>
+
+
+            <label class="lab ">Address</label>
+            <input class="add"><br>
+
+            <label class="lab">City</label>
+            <input><br>
+
+            <label class="lab" for="pin">Pin Code</label>
+            <input name="pin" maxlength="6" required><br>
+
+            <label class="lab">State</label>
+            <input><br>
+
+            <label class="lab">Country</label>
+            <input><br>
+
+            <label class="lab">hobbies</label>
+            <label>Surfing</label>
+            <input id="ho" type="checkbox">
+            <label>Dancing</label>
+            <input id="ho" type="checkbox">
+            <label>Other</label>
+
+            <input id="ho" type="checkbox"><br>
+
+            <table>
+                <td class="td">QUALIFICATION</td>
+                <tr class="tr a">
+                    <td>Sl.No</td>
+                    <td>Examination</td>
+                    <td class="tr1">Board</td>
+                    <td class="tr1">Percentage</td>
+                    <td class="tr1">Year of Passing</td>
+                </tr>
+                <tr class="tr">
+                    <td>1</td>
+                    <td>Class X</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr class="tr">
+                    <td>2</td>
+                    <td>Class XII</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr class="tr">
+                    <td>3</td>
+                    <td>Graduation</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+
+
+            <label class="lab s">courses<br>applied for</label>
+            <label>DME</label>
+            <input class="co" type="radio" name="COURSES" value="DME">
+            <label class="b">BE</label>
+            <input class="co b" type="radio" name="COURSES" value="BE"><br>
+            
+           <button type="submit" class="but"><a href="light.html" target="_blank">submit</a></button>
+           <button class="but" type="reset"><a href="">Reset</a></button>
+        </div>
+        </form>
+
+    </div>
+    
+</body>
+</html>

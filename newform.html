@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    
+    
+</head>
+<body>
+    <div class="container">
+        <div class="heater">
+            <h2>Create Account</h2>
+        </div>
+        <form class="from" id="form" action="index.html">
+            <div class="form-control">
+                <label>UserName:</label>
+                <input type="text" placeholder="username" id="username" onfocus="boomi()">
+                <i class="fas fa-check-circle"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label>Email:</label>
+                <input type="email" placeholder="@gmail.com" id="email" onfocus="boomi1()">
+                <i class="fas fa-check-circle"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label>Password:</label>
+                <input type="password" placeholder="Password" id="Password" maxlength="6" onfocus="boomi2()">
+                <i class="fas fa-check-circle"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label>Confirm password:</label>
+                <input type="password" placeholder="confirm password" id="password2" maxlength="6" onfocus="boomi3()">
+                <i class="fas fa-check-circle"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(127, 127, 201);
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container{
+            background-color: white;
+            border-radius:5px;
+            box-shadow: 10px 20px 25px rgba(0,0,0,.8);
+            overflow: hidden;
+            max-width: 100%;
+            width: 400px;
+        }
+        .heater{
+            border-bottom: 2px solid cornflowerblue;
+            background-color: rgb(156, 191, 221);
+            padding: 20px 45px;
+        }
+        .heater h2{
+            margin: 0;
+            text-align: center;
+        }
+        .from{
+            padding: 30px 40px;
+
+        }
+        .form-control{
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            position: relative;
+
+        }
+        .form-control label{
+            display:inline-block;
+            margin-bottom: 5px;
+        }
+        .form-control input{
+            border: 2px solid rgb(187, 181, 181);
+            border-radius: 5px;
+            display: block;
+            font-size: 14px;
+            padding: 10px;
+            width: 100%;
+        }
+        .form-control input:focus{
+            outline: none;
+            border-color: rgb(49, 18, 224);
+
+        }
+        .form-control.success input{
+            border-color: #06d65c;
+        }
+        .form-control.error input{
+            border-color:red;
+        }
+        .form-control i{
+            visibility:hidden;
+            position: absolute;
+            top: 35px;
+            right: 10px;
+        }
+        .form-control.success i.fa-check-circle{
+            color: #06d65c;
+            visibility: visible;
+        }
+        .form-control.error i.fa-circle-exclamation{
+            color:red;
+            visibility: visible;
+        }
+        .form-control small{
+            color: red;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            visibility: hidden;
+        }
+        .form-control.error small{
+            visibility: visible;
+        }
+        .from button{
+            background-color: blue;
+            border: none;
+            color: bisque;
+            display: block;
+            font-size: 15px;
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function boomi(){
+            document.getElementById('username').style.backgroundColor='lightgreen'
+        }
+        function boomi1(){
+            document.getElementById('email').style.backgroundColor='lightgreen'
+        }
+        function boomi2(){
+            document.getElementById('Password').style.backgroundColor='lightgreen'
+        }
+        function boomi3(){
+            document.getElementById('password2').style.backgroundColor='lightgreen'
+        }
+        const form=document.getElementById("form");
+        const username=document.getElementById("username");
+        const email=document.getElementById("email");
+        const password=document.getElementById("Password");
+        const password2=document.getElementById("password2");
+
+        form.addEventListener('submit',e =>{
+            e.preventDefault();
+            checkInput();
+
+        });
+
+        function checkInput(){
+            const usernameValue = username.value.trim();
+            const emailValue = email.value.trim();
+            const passwordValue = Password.value.trim();
+            const password2Value = password2.value.trim();
+
+            if(usernameValue === ''){
+                setError(username,'User name cannot be blank!!!');
+            }
+            else{
+                setSucces(username);
+            }
+
+            if(emailValue === ''){
+                setError(email,'Email cannot be blank');
+            }
+            else if(!isemail(emailValue)){
+                setError(email,'not a valid Email');
+            }
+            else{
+                setSucces(email);
+            } 
+        
+            if(passwordValue === '')
+            {
+                setError(password,'password cannot be blank');
+            }
+            else{
+                setSucces(password);
+            }
+            if(password2Value === ''){
+                setError(password2,'password cannot be blank');
+            }
+            else if(passwordValue !== password2Value){
+                setError(password2,'password Does not match');
+            }
+            else{
+                setSucces(password2);
+            }
+        }    
+
+        function setError(input,message){
+            const boomik= input.parentElement;
+            const small = boomik.querySelector('small');
+            boomik.className = 'form-control error';
+            small.innerText = message;
+        } 
+        function setSucces(input){
+            const boomik = input.parentElement;
+            boomik.className = 'form-control success';
+
+
+        }   
+        
+        
+        function isemail(email){
+            return  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+        }
+    </script>
+</body>
+</html>

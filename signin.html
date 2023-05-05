@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boomi form</title>
+</head>
+<body>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            overflow-x: hidden;
+            overflow: hidden;
+
+        }
+        .outerbox button{
+            color: red;
+            padding: 5px;
+            margin: 8px;
+            width: 30mm;
+            height: 10mm;
+            border-radius: 20px;
+            box-shadow: 5px 10px 10px rgb(185, 171, 171);
+            background-color: white;
+            border: none;
+        }
+        .outerbox a{
+            text-decoration: none;
+            color: red;
+        }
+        .b1{
+            position: relative;
+            top: 30mm;
+            left: 10mm;
+        }
+        .b1:hover{
+            background-color: rgb(213, 219, 219);
+
+        }
+        .innerbox{
+            
+            width: 120mm;
+            height: 120mm;
+            position: relative;
+            left: 120mm;
+            bottom: 10mm;
+            rotate: 45deg;
+            box-shadow: 10px 10px 10px rgb(182, 165, 165);
+        }
+        .firstbox{
+            text-align: center;
+            justify-content: center;
+            position: relative;
+           
+            bottom: 90mm;
+        }
+        .heat{
+            position: relative;
+            left: 154mm;
+            top: 30mm;
+            color: red;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: xx-large;
+        }
+        .firstbox input{
+            width: 80mm;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px;
+            border: 2px solid rgb(235, 223, 223);
+            box-shadow: 5px 2px 5px 0px rgb(214, 204, 204);
+        }
+        .but{
+            position: relative;
+            color: crimson;
+            background-color: white;
+            font-family:serif;
+            font-size: large;
+        }
+        .but:hover{
+            background-color: darkgrey;
+            
+        }
+        .message{
+            position: absolute;
+            color: red;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .error.message{
+            visibility: visible;
+            opacity: 1;
+
+        }
+    </style>
+    <form id="ka" name="f2" action="https://www.w3schools.com/" onsubmit="return kalai()"> 
+        <div class="outerbox">
+            <h1 class="heat">S i g n I n</h1>
+            <button class="b1"><a href="signin.html">SignIn</a></button><br>
+            <button class="b1"><a href="signup.html">SignUp</a></button>
+            <div class="innerbox">
+            </div>
+            <div class="firstbox">
+                
+                <input type="text" id="email" name="Email" placeholder="Email Address" onfocus="mail()" required><br>
+                <p class="message">Error message</p>
+                
+                <input type="text" id="pass" name="passwords" placeholder="Password"  maxlength="8" onfocus="password()" required><br>
+                <p class="message">Error message</p>  
+
+                <input type="button" class="but"  onclick="kalai()" value="submit">
+            </div>
+        </div>
+       </form>
+       <script>
+        function mail(){
+            document.getElementById("email").style.backgroundColor="rgb(0, 255, 128)"
+            document.getElementById("email").style.border='3px solid #ffff00 '
+        }
+        function password(){
+            document.getElementById("pass").style.backgroundColor="lightgreen"
+            document.getElementById("pass").style.border='3px solid #ffff00 '
+        }
+        function kalai(){
+            const name=document.getElementById("email")
+            const password=document.getElementById("pass")
+
+            const checkEmail = (input) => {
+            const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+         if (regEx.test(input.value.trim())) {
+             success(input);
+        } else {
+          error(input, "Email is not valid");
+        }
+};
+        }
+       </script>
+</body>
+</html>
