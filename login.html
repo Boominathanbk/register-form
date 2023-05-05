@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Booking</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="form" id="check">
+                <form id="form">
+                    <h1 class="wel">𝔀𝓮𝓵𝓬𝓸𝓶𝓮</h1>
+                    <div class="box">
+                        <div>
+                            <label class="name">1.Name:</label>
+                            <input type="text" id="name1">
+                            <label class="name">2.Name:</label>
+                            <input type="text" id="name2"><br>
+                        </div>
+                        <div>
+                            <label class="name">1.Mobile no:</label>
+                            <input type="text" maxlength="10" id="mobileno1">
+                            <label class="name">2.Mobile no:</label>
+                            <input type="text" maxlength="10" id="mobileno2"><br>
+                        </div>
+                        <div>
+                            <label class="name">City/Village:</label>
+                            <input type="text" id="city">
+                        </div>
+                        <div>    
+                            <label class="name">Distric:</label>
+                        <select class="dist" id="dist">
+                            <option>None</option>
+                            <option>Ariyalur</option>
+                            <option>Chengalpattu</option>
+                            <option>Chennai</option>
+                            <option>Coimbatore</option>
+                            <option>Cuddalore</option>
+                            <option>Dharmapuri</option>
+                            <option>Dindigul</option>
+                            <option>Erode</option>
+                            <option>Kallakurichi</option>
+                            <option>Kancheepuram</option>
+                            <option>Karur</option>
+                            <option>Krishnagiri</option>
+                            <option>Madurai</option>
+                            <option>Mayiladuthurai</option>
+                            <option>Nagapattinam</option>
+                            <option>Kanniyakumari</option>
+                            <option>Namakkal</option>
+                            <option>Perambalur</option>
+                            <option>Pudukottai</option>
+                            <option>Ramanathapuram</option>
+                            <option>Ranipet</option>
+                            <option>Salem</option>
+                            <option>Sivagangai</option>
+                            <option>Tenkasi</option>
+                            <option>Thanjavur</option>
+                            <option>Theni</option>
+                            <option>Thiruvallur</option>
+                            <option>Thiruvarur</option>
+                            <option>Thoothukudi</option>
+                            <option>Trichirappalli</option>
+                            <option>Thirunelveli</option>
+                            <option>Tirupathur</option>
+                            <option>Tiruppur</option>
+                            <option>Tiruvannamalai</option>
+                            <option>The Nilgiris</option>
+                            <option>Vellore</option>
+                            <option>Viluppuram</option>
+                            <option>Virudhunagar</option>
+                        </select>
+                        </div> 
+                    <div>
+                        <label class="name">Total Days:</label>
+                        <select class="option" id="option">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                        </div>
+                        <div> 
+                        
+                    </div>
+                    <div class="date">
+                        <label class="name">Booking Date:</label>
+                        <input type="date" id="date1" required>  to  <input type="date" id="date2" required>
+                    </div>
+                </form>
+                <div class="adv">
+                    <hr>
+                    <h3>Advanced Payment mode</h3>
+                    <div class="sug" id="sug">
+                        <p><u>Suggested for you</u></p>
+                        <input type="radio" name="cash" id="googlepay" required>google pay<i class="fa-brands fa-google-pay" style="color: #f6e604;"></i><br><br>
+                        <input type="radio" name="cash" id="phonepe" required>Phonepe<br><br>
+                    </div>
+                </div class="back">
+                <button class="button" type="submit"><a>Confirm</a></button>
+                <button class="button" type="reset">Reset</button>
+                <a href="port.html"><i class="fa-solid fa-circle-arrow-left"></i></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<script>
+
+    const check = document.getElementById('check')
+    const name1 = document.getElementById('name1')
+    const name2 = document.getElementById('name2')
+    const mobileno1 = document.getElementById('mobileno1')
+    const mobileno2 = document.getElementById('mobileno2')
+    const city = document.getElementById('city')
+    const dist = document.getElementById('dist')
+    const option = document.getElementById('option')
+    const date1 = document.getElementById('date1')
+    const date2 = document.getElementById('date2')
+   
+
+
+
+    check.addEventListener('submit' ,e=>{
+        e.preventDefault();
+        checkvalue();
+    });
+
+    function checkvalue(){
+        
+        const name1Value = name1.value.trim();
+        const name2Value = name2.value.trim();
+        const mobileno1Value = mobileno1.value.trim();
+        const mobileno2Value = mobileno2.value.trim();
+        const cityValue = city.value.trim();
+        const distValue = dist.value.trim();
+        const optionValue = option.value.trim();
+       
+       
+
+
+        if(name1Value == ''){
+            alert('enter the name1');
+        }
+        else if(name2Value == ''){
+            alert('enter the name2');
+        }
+        else if(mobileno1Value == ''){
+            alert('enter the mobileno:1');
+        }
+        else if(mobileno2Value == ''){
+            alert('enter the mobileno:2');
+        }
+        else if(cityValue == ''){
+            alert('enter the your city/village');
+        }
+        else if(distValue =='None'){
+            alert('choose your dister');
+        }
+        else if(optionValue =='0'){
+            alert('select your how many days');
+        }
+       
+      
+        else{
+            window.open("upi://pay?pn=boomi&amp;pa=8778604136@ybl&amp;cu=INR");
+        }
+    }
+
+
+</script>
